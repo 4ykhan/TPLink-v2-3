@@ -1,0 +1,35 @@
+STEP BY STEP GUIDE TO PERFORM WIRELESS NETWORK ASSESSMENT
+
+1. Install Kali Linux:
+	Distributor ID: Kali
+	Description:    Kali GNU/Linux Rolling
+	Release:        2022.3
+	Codename:       kali-rolling
+
+2. sudo apt update & upgrade -y
+3. sudo apt dist-upgrade
+4. sudo reboot
+5. sudo apt install bc
+6. sudo apt-get install build-essential
+7. sudo apt-get install libelf-dev
+8. git clone https://github.com/KanuX-14/rtl8188eus.git
+9. cd rtl8188eus
+10. sudo -i
+11. echo "blacklist r8188eu" > "/etc/modprobe.d/realtek.conf"
+12. sudo reboot
+13. cd rtl8188eus
+14. sh -c "$curl -FsSL https://https://raw.githubusercontent.com/KanuX-14/rtl8188eus/master/scripts/build.sh)"
+15. sudo airmon-ng check
+16. sudo airmon-ng check kill
+17. sudo airmon-ng start wlan0
+18. iwconfig -> check if mode is "monitor"
+19. sudo airodump-ng wlan0 -> check if you capture networks
+20. sudo aireplay-ng --test wlan0
+21. sudo service NetworkManager start -> to establish internet and exit the monitor mode
+
+
+WiFite2
+1. to fix issue with library -> ln -s /usr/bin/hcxpcapngtool /usr/bin/hcxpcaptool
+
+Video explaining how to make TP-Link v2/3 adapther work
+https://www.youtube.com/watch?v=AmxHlvTrijs
